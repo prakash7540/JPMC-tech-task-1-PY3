@@ -310,7 +310,22 @@ class App(object):
         }]
 
 ################################################################################
-#
+# Main
+def getDataPoint(stock):
+    # existing code
+    bid_price = float(stock['bid']['price'])
+    ask_price = float(stock['ask']['price'])
+    
+    # Modify how price is computed
+    price = (bid_price + ask_price) / 2
+    
+    # existing code
+    return {
+        'bid_price': bid_price,
+        'ask_price': ask_price,
+        'price': price,
+        'symbol': stock['symbol'],
+    }
 # Main
 
 if __name__ == '__main__':
